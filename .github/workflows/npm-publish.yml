@@ -28,6 +28,7 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/
       - run: npm ci
+      - run: npm run-script build-release-ci
       - run: cd package
       - run: npm publish --access public
         env:
@@ -43,6 +44,9 @@ jobs:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
       - run: npm ci
+      - run: npm ci
+      - run: npm run-script build-release-ci
+      - run: cd package
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

@@ -16,7 +16,6 @@ echo "This will:"
 echo "- run the test suite"
 echo "- build GOV.MOA Frontend into the 'package/' directory"
 echo "- build GOV.MOA Frontend into the 'dist/' directory"
-echo "- commit all changes and push the branch to remote"
 echo " "
 
 read -r -p "Do you want to continue? [y/N] " continue_prompt
@@ -33,15 +32,3 @@ npm run build:dist
 ALL_PACKAGE_VERSION=$(node -p "require('./package/package.json').version")
 TAG="v$ALL_PACKAGE_VERSION"
 CURRENT_BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
-
-if [ $(git tag -l "$TAG") ]; then
-    echo "⚠️ Git tag $TAG already exists. Check you have updated the version in package/package.json correctly."
-    exit 1;
-else
-    git add .
-    git commit -m "Release $TAG"
-    # set upstream so that we can push the branch up
-    git push --set-upstream origin $CURRENT_BRANCH_NAME
-    git push
-    echo "🗒 All done. Ready to create a pull request. Once approved, run npm run publish-release"
-fi

@@ -21,30 +21,41 @@ jobs:
   publish-npm:
     needs: build
     runs-on: ubuntu-latest
+    env: 
+      working-directory: ./package
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
-      - run: npm ci
-      - run: npm run-script build-release-ci
-      - run: cd package && npm publish --access public
+      - name: install
+        run: npm ci
+      - name: build package
+        run: npm run-script build-release-ci
+      - name: publish
+        run: npm publish --access public
+        working-directory: ${{env.working-directory}}
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
 
   publish-gpr:
     needs: build
     runs-on: ubuntu-latest
+    env: 
+      working-directory: ./package
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
-      - run: npm ci
-      - run: npm ci
-      - run: npm run-script build-release-ci
-      - run: cd package && npm publish --access public
+      - name: install
+        run: npm ci
+      - name: build package
+        run: npm run-script build-release-ci
+      - name: publish
+        run: npm publish
+        working-directory: ${{env.working-directory}}
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

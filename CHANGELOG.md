@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.2.3 [MOA]
+
+* add github workflow for gpr npm
+
 ## v0.2.2 [MOA]
 
 * dependabot updates

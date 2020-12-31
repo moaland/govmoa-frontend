@@ -1,7 +1,7 @@
 {
-  "name": "moaland-frontend",
+  "name": "@moaland/moaland-frontend",
   "description": "Moaland Frontend contains the code you need to start building a user interface for government platforms and services.",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "main": "moaland/all.js",
   "sass": "moaland/all.scss",
   "engines": {
@@ -12,8 +12,7 @@
     "email": "moa@moaland.wcys.co"
   },
   "repository": {
-    "type": "git",
-    "url": "https://github.com/moaland/moaland-frontend"
+    "url": "git://github.com/moaland/moaland-frontend.git"
   },
   "bugs": {
     "url": "https://github.com/moaland/moaland-frontend/issues"

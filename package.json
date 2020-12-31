@@ -12,6 +12,7 @@
     "start": "gulp dev",
     "heroku": "gulp copy-assets && gulp sassdoc && node app/start.js",
     "build-release": "node bin/check-nvmrc.js && ./bin/build-release.sh",
+    "build-release-ci": "node bin/check-nvmrc.js && ./bin/build-release-ci.sh",
     "publish-release": "node bin/check-nvmrc.js && ./bin/publish-release.sh",
     "pre-release": "node bin/check-nvmrc.js && ./bin/pre-release.sh",
     "build:package": "node bin/check-nvmrc.js && gulp build:package --destination 'package' && npm run test:build:package",

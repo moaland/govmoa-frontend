@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.2.2 [MOA]
+
+* dependabot updates
+* fix release workflow file [fail](https://github.com/moaland/moaland-frontend/actions/runs/453840022)
+
 ## v0.2.1 [MOA]
 
 * Add release workflow, dependabot setup

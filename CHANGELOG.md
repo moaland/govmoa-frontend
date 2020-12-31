@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.2.1 [MOA]
+
+* Add release workflow, dependabot setup
+
 ## v0.2-MOA
 
 * Init chore work

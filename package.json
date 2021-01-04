@@ -53,7 +53,7 @@
     "gulp-uglify": "^3.0.2",
     "html5shiv": "^3.7.3",
     "jest": "^26.6.3",
-    "jest-axe": "^3.5.0",
+    "jest-axe": "^4.1.0",
     "jest-puppeteer": "^4.4.0",
     "jest-serializer-html": "^7.0.0",
     "jquery": "3.5.0",
